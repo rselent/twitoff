@@ -14,12 +14,12 @@ BASILICA = basilica.Connection( config( 'BASILICA_KEY'))
 
 def add_or_update_user( name):
 	"""
-	Add or update a user and their Tweets.
-	Throw an error if user doesn't exist or private.
+	Add / update a user and their tweets.
+	Throw error if user doesn't exist or private
 	"""
 	try:
-		twitter_user = TWITTER.get_user( name)
-		db_user = ( User.query.get( twitter_user.id) or User( id= twitter_user.id, name= name))
+		twitterUser = TWITTER.get_user( name)
+		db_user = ( User.query.get( twitterUser.id) or User( id= twitterUser.id, name= name))
 		DB.session.add( db_user)
 		tweets = twitter_user.timeline( count=200,
 									exclude_replies= True,
@@ -40,8 +40,10 @@ def add_or_update_user( name):
 		DB.session.commit()
 
 
-def update_all_users():
-	"""Update all Tweets for all Users in the User table."""
+def update_users():
+	"""
+	Update tweets for all users in User table
+	"""
 	for user in User.query.all():
 		add_or_update_user( user.name)
 
