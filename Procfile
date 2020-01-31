@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT twitoff:application
+web: waitress-serve --port=$PORT twitoff:APP
