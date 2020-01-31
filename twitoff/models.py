@@ -6,7 +6,7 @@ DB = SQLAlchemy()
 
 
 class User( DB.Model):
-	id = DB.Column( DB.Integer, primary_key= True)
+	id = DB.Column( DB.BigInteger, primary_key= True)
 	name = DB.Column( DB.String( 20), nullable= False)
 	newest_tweet_id = DB.Column( DB.BigInteger)
 
