@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT twitoff.wsgi:application
+web: waitress-serve --port=$PORT app:application
