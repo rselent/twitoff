@@ -7,9 +7,9 @@ APP = Flask( __name__)
 
 def main():
 
-	return "<h1>Hello, bitches!</h1>"
+	return "<h1>Hello, doggos!</h1>"
 
-#	print( "<h1>Hello, bitches!</h1>")
+#	print( "<h1>Hello, doggos!</h1>")
 #	return 0
 
 
